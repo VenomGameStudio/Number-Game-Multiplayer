@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4751621962260089178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6239986803197125490}
+  - component: {fileID: 1098495292358415553}
+  m_Layer: 0
+  m_Name: LobbyController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6239986803197125490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4751621962260089178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1098495292358415553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4751621962260089178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfd38e656f86b44198fc1a221ed1a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitingRoomIndex: 1
+  gameSceneIndex: 2
+  delayStartBtn: {fileID: 0}
+  delayCancelBtn: {fileID: 0}
+  quickStartBtn: {fileID: 0}
+  quickCancelBtn: {fileID: 0}
+  roomSize: 4
+  lobbyConnectBtn: {fileID: 0}
+  lobbyPanel: {fileID: 0}
+  menuPanel: {fileID: 0}
+  playerName: {fileID: 0}
+  roomContainer: {fileID: 0}
+  roomListingPrefab: {fileID: 7964963130649558502, guid: 9b1f2f89cfd95e94992cdd8ccc25f79f, type: 3}
+  roomPanel: {fileID: 0}
+  customRoomStartBtn: {fileID: 0}
+  playerContainer: {fileID: 0}
+  playerListingPrefab: {fileID: 110039108518443832, guid: a6646e7aa6f7e274c993c1bd1d3a7668, type: 3}
+  roomNameDisplay: {fileID: 0}
+  quickStart: 0
+  delayStart: 0
+  customRoom: 0
