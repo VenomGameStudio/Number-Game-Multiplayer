@@ -1,6 +1,7 @@
 using TMPro;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ public class LobbyController : MonoBehaviourPunCallbacks
     [Header("Room")]
     [SerializeField] private GameObject roomPanel;
     [SerializeField] private GameObject customRoomStartBtn;
+    [SerializeField] private GameObject customRoomReadyBtn;
     [SerializeField] private Transform playerContainer;
     [SerializeField] private GameObject playerListingPrefab;
     [SerializeField] private TMP_Text roomNameDisplay;
@@ -138,9 +140,16 @@ public class LobbyController : MonoBehaviourPunCallbacks
             lobbyPanel.SetActive(false);
             roomNameDisplay.text = PhotonNetwork.CurrentRoom.Name;
             if (PhotonNetwork.IsMasterClient)
+            {
+                customRoomReadyBtn.SetActive(false);
                 customRoomStartBtn.SetActive(true);
+            }
             else
+            {
+                customRoomReadyBtn.GetComponent<Image>().color = Color.red;
+                customRoomReadyBtn.SetActive(true);
                 customRoomStartBtn.SetActive(false);
+            }
 
             ClearPlayerList();
             ListPlayer();
@@ -263,7 +272,10 @@ public class LobbyController : MonoBehaviourPunCallbacks
         ClearPlayerList();
         ListPlayer();
         if (PhotonNetwork.IsMasterClient)
+        {
+            customRoomStartBtn.GetComponent<Image>().color = Color.green;
             customRoomStartBtn.SetActive(true);
+        }
     }
 
     public override void OnLeftRoom()
@@ -273,6 +285,11 @@ public class LobbyController : MonoBehaviourPunCallbacks
         {
             Destroy(obj);
         }*/
+    }
+
+    public void ReadyBtnCall()
+    {
+        customRoomReadyBtn.GetComponent<Image>().color = Color.green;
     }
 
     public void StartGame()
@@ -300,6 +317,7 @@ public class LobbyController : MonoBehaviourPunCallbacks
     }
     #endregion
 
+    #region Photon Leave Buttons
     public void DelayCancel()
     {
         delayCancelBtn.SetActive(false);
@@ -321,4 +339,5 @@ public class LobbyController : MonoBehaviourPunCallbacks
         lobbyPanel.SetActive(false);
         PhotonNetwork.LeaveLobby();
     }
-}   
+    #endregion
+}
